@@ -44,6 +44,7 @@ class Authentication extends TestCase
 
         $response->assertStatus(200);
         $this->assertAuthenticatedAs($user, 'web');
+        $this->assertAuthenticatedAs($user, 'api');
         $this->assertDatabaseCount('users', 1);
     }
 
